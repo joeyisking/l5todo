@@ -19,7 +19,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -28,13 +28,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				<a class="navbar-brand" href="{{ url('/') }}">Home</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
-				</ul>
+                    <li><a href="{{ url('/projects') }}">Project</a></li>
+                </ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
@@ -53,7 +53,7 @@
 		</div>
 	</nav>
 	
-	<div class="content">
+	<div class="container" style="padding-top:55px;">
 		@if (Session::has('message'))
 			<div class="flash alert-info">
 				<p>{{ Session::get('message') }}</p>

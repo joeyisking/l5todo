@@ -41,7 +41,7 @@ class ProjectsController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		$this->validate($request, $this->rules);
 		$input = Input::all();
@@ -79,7 +79,7 @@ class ProjectsController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function update(Project $project)
+	public function update(Project $project, Request $request)
 	{
 		$this->validate($request, $this->rules);
 

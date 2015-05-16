@@ -45,7 +45,7 @@ class TasksController extends Controller {
 	 * @param  \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function store(Project $project)
+	public function store(Project $project, Request $request)
 	{
 		$this->validate($request, $this->rules);
 
@@ -88,7 +88,7 @@ class TasksController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function update(Project $project, Task $task)
+	public function update(Project $project, Task $task, Request $request)
 	{
 		$this->validate($request, $this->rules);
 	
