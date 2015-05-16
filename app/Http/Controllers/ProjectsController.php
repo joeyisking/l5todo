@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
  
 class ProjectsController extends Controller {
+
+	protected $rules = [
+		'name' => ['required', 'min:3'],		
+		'slug' => ['required'],
+	];
  
 	/**
 	 * Display a listing of the resource.
@@ -33,11 +38,12 @@ class ProjectsController extends Controller {
  
 	/**
 	 * Store a newly created resource in storage.
-	 *
+	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
 	public function store()
 	{
+		$this->validate($request, $this->rules);
 		$input = Input::all();
 		Project::create( $input );
  
@@ -70,10 +76,13 @@ class ProjectsController extends Controller {
 	 * Update the specified resource in storage.
 	 *
 	 * @param  \App\Project $project
+	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
 	public function update(Project $project)
 	{
+		$this->validate($request, $this->rules);
+
 		$input = array_except(Input::all(), '_method');
 		$project->update($input);
  
