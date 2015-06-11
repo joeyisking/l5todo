@@ -18,7 +18,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        die('xxxx');
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 
     /**
