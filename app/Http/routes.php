@@ -26,4 +26,4 @@ Route::bind('projects', function($value, $route) {
 Route::resource('projects', 'ProjectsController');
 Route::resource('projects.tasks', 'TasksController');
 Route::resource('images', 'ImagesController');
-
+Route::resource('posts', 'PostsController');
