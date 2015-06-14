@@ -1,4 +1,4 @@
-<!-- /resources/views/projects/partials/_form.blade.php -->
+<!-- /resources/views/projects/partials/_createPost.blade.php -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
     {!! Form::text('name') !!}

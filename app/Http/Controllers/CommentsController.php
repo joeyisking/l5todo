@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\Comment;
 use Illuminate\Http\Request;
 use Input;
 use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PostsController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        //
     }
 
     /**
@@ -29,34 +28,33 @@ class PostsController extends Controller
      */
     public function create()
     {
-		return view('posts.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @param  ID of App\Post $id
      * @return Response
      */
     public function store()
     {
         $input = Input::all();
-        Post::create( $input );
-        return Redirect::route('posts.index')->with('message', 'Post created');
 
+        echo '<pre>';var_dump($input);die('xxx');
+
+        Comment::create( $input );
+        return Redirect::route('posts.index')->with('message', 'comment created');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  ID of App\Post $id
+     * @param  int  $id
      * @return Response
      */
     public function show($id)
     {
-        //This will need to be reviewed in future,
-        //I believe there should be a better way to do it using the show(Post $id)
-        $post = Post::find($id);
-        return view('posts.show', compact('post'));
+        //
     }
 
     /**
