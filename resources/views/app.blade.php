@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>Sunbros</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
@@ -28,14 +28,28 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ url('/') }}">Home</a>
+				<a class="navbar-brand" href="{{ url('/') }}">Sunbros</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-                    <li><a href="{{ url('/projects') }}">Project</a></li>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/posts') }}">Forums</a></li>
                 </ul>
-
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/blogs') }}">Blogs</a></li>
+                </ul>
+				<ul class="nav navbar-nav">
+                    <li><a href="{{ url('/members') }}">Members</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/code') }}">Code Snippets</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/chat') }}">Live Chat</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/contact_us') }}">Contact Us</a></li>
+                </ul>
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>

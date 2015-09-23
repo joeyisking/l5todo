@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $("#input").val('');
-    print_to_output();
+    print_to_body();
+    print_to_subject();
     heading_1_button();
     heading_2_button();
     heading_3_button();
@@ -13,7 +14,14 @@ $( document ).ready(function() {
 });
 
 //Prints text from input box to output div
-function print_to_output(){
+function print_to_subject(){
+    $("#subject_text").bind('input propertychange', function() {
+        $("#subject").text($("#subject_text").val());
+    });
+}
+
+//Prints text from input box to output div
+function print_to_body(){
 
     $("#input").bind('input propertychange', function() {
         $("#output").html($("#input").val().replace(/\n/g, '<br />'));

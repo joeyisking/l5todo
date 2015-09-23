@@ -25,7 +25,7 @@
 
     <div class="col-md-5" id="right div">
         Enter Subject Matter here:<br />
-        <input type="text" style="width:435px;" /><br /><br />
+        <input id="subject_text" type="text" style="width:435px;" /><br /><br />
         Input:<br />
         <div>
             <button id="heading_1" class="btn btn-default" type="submit"><b>H1</b></button>

@@ -1,49 +1,48 @@
 @extends('app')
 
 @section('content')
-    <h2>Display all Post</h2>
+    <h3>Forums</h3>
 
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Votes</th>
+            <th>Title</th>
+            <th>Authored By</th>
+        </tr>
+        </thead>
+        <tbody>
     @foreach($posts as $post)
-        <ul><a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a></ul>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            {{ $post->votes }}
+                        </td>
+                    <tr>
+                        <td>
+                            <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <h4><a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a></h4>
+            </td>
+            <td>
+                {{$post->user_id}}
+                Username and date will go here
+            </td>
+        </tr>
     @endforeach
-
-
-    <?php
-    $array = array('hello1','hello2','hello3', 'hello4','hello5','hello3', 'hello4','hello5');
-    ?>
-    <div class="container-fluid">
-    <?php $i = 0;?>
-    @foreach($array as $value)
-            @if($i == 5)
-                <div class="row">
-            @endif
-                <div class="col-md-2 ">
-                    <div class="panel panel-default" style="padding: 10px 10px 10px 10px;">
-                        <div class="row">
-                            <div class = "col-md-12">
-                                <div class="panel panel-default">
-                                    <br />
-                                    image
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-                        <?php echo $value;?><br />
-                        address<br />
-                        like<br />
-
-                    </div>
-                </div>
-            @if($i == 5)
-                </div>
-                <?php $i = 0;?>
-            @endif
-        <?php $i = $i + 1;?>
-    @endforeach
-    </div>
-
+        </tbody>
+    </table>
 
 @endsection
