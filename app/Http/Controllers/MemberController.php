@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Redirect;
-use Input;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class MemberController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -18,17 +16,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('index.index');
+        return view('members.index');
     }
 
-    /**
-     * @return \Illuminate\View\View
-     */
-    public function contactus()
-    {
-
-        return view('index.contactus');
-    }
     /**
      * Show the form for creating a new resource.
      *

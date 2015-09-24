@@ -16,6 +16,7 @@ Route::get('/', 'IndexController@index');
 // Provide controller methods with object instead of ID
 Route::model('tasks', 'Task');
 Route::model('projects', 'Project');
+
 // Use slugs rather than IDs in URLs
 Route::bind('tasks', function($value, $route) {
 	return App\Task::whereSlug($value)->first();
@@ -23,10 +24,14 @@ Route::bind('tasks', function($value, $route) {
 Route::bind('projects', function($value, $route) {
 	return App\Project::whereSlug($value)->first();
 });
- 
+
+Route::resource('blogs', 'BlogController');
+Route::resource('code', 'CodeController');
+Route::resource('comments',  'CommentsController');
+Route::resource('dev', 'DevController');
+Route::resource('images', 'ImagesController');
+Route::resource('index', 'IndexController');
+Route::resource('members', 'MemberController');
+Route::resource('posts', 'PostsController');
 Route::resource('projects', 'ProjectsController');
 Route::resource('projects.tasks', 'TasksController');
-Route::resource('images', 'ImagesController');
-Route::resource('posts', 'PostsController');
-Route::resource('index', 'IndexController');
-Route::resource('comments',  'CommentsController');

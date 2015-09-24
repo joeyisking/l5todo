@@ -48,7 +48,7 @@
                     <li><a href="{{ url('/chat') }}">Live Chat</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/contact_us') }}">Contact Us</a></li>
+                    <li><a href="{{ url('/contactus') }}">Contact Us</a></li>
                 </ul>
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
