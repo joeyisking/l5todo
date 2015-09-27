@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'IndexController@index');
-
+Route::get('contactus', 'IndexController@contactus');
 // Provide controller methods with object instead of ID
 Route::model('tasks', 'Task');
 Route::model('projects', 'Project');
@@ -25,8 +25,14 @@ Route::bind('projects', function($value, $route) {
 	return App\Project::whereSlug($value)->first();
 });
 
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
 Route::resource('blogs', 'BlogController');
 Route::resource('code', 'CodeController');
+Route::resource('chat', 'ChatController');
 Route::resource('comments',  'CommentsController');
 Route::resource('dev', 'DevController');
 Route::resource('images', 'ImagesController');

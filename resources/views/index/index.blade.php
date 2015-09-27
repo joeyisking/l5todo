@@ -15,7 +15,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1 class="panel-title"><a href="{{ url('/posts')}}" }}>Blogs</a></h1>
+            <h1 class="panel-title"><a href="{{ url('/blogs')}}" }}>Blogs</a></h1>
         </div>
         <div class="panel-body">
             Member Blogs!
@@ -24,7 +24,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1 class="panel-title"><a href="{{ url('/posts')}}" }}>Members</a></h1>
+            <h1 class="panel-title"><a href="{{ url('/members')}}" }}>Members</a></h1>
         </div>
         <div class="panel-body">
             List of Members and some basic contact details
@@ -33,7 +33,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1 class="panel-title"><a href="{{ url('/posts')}}" }}>Code Snippets</a></h1>
+            <h1 class="panel-title"><a href="{{ url('/code')}}" }}>Code Snippets</a></h1>
         </div>
         <div class="panel-body">
             Bits and bobs of code that while not relevant to this forum still might be useful someday
@@ -42,7 +42,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1 class="panel-title"><a href="{{ url('/posts')}}" }}>Live Chat</a></h1>
+            <h1 class="panel-title"><a href="{{ url('/chat')}}" }}>Live Chat</a></h1>
         </div>
         <div class="panel-body">
             Pretty much what you think it would be
