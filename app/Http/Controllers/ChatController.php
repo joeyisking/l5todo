@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Input;
+use Redirect;
 use App\Chat;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,7 +19,14 @@ class ChatController extends Controller
      */
     public function index()
     {
+        //returns an array of objects
         $chatmessages = Chat::all();
+        $auth = new Auth();
+
+        //Adds user's name to obj
+        foreach($chatmessages as $key => $result){
+            $chatmessages[$key]->name = $auth::user()->name;
+        }
 
         return view('chat.index',  compact('chatmessages'));
     }
@@ -38,7 +48,16 @@ class ChatController extends Controller
      */
     public function store()
     {
-        //
+        $auth = new Auth();
+        $user_id = $auth::user()->id;
+        $input = Input::all();
+
+        $param = array(
+            "user_id" => $user_id,
+            "message" => $input['message'],
+        );
+        var_dump($param);
+        Chat::create($param);
     }
 
     /**

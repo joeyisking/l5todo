@@ -14,21 +14,19 @@
                     <div class="panel-body" id="chat_window" style="height:300px">
                         <?php
                             foreach($chatmessages as $message){
-                                echo $message->user_id . ": " . $message->message;
+
+                                echo "<b>" . $message->name . ":</b> " . $message->message . "<br />";
                             }
                         ?>
                     </div>
                 </div>
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                <textarea id = "message_field" class="form-control" rows="2" placeholder="Text goes here"></textarea>
+                <div style="padding-top: 10px; float: right;">
+                    <button id = 'clear_field' type="button" class="btn btn-danger">Clear</button>
+                    <button id = 'chat_submit' type="submit" class="btn btn-primary">Submit</button>
+                </div>
 
-                <form  role="search">
-                    <textarea class="form-control" rows="2" placeholder="Text goes here"></textarea>
-                    <br />
-                    <div style="padding-top: 10px; float: right;">
-                    <button type="button" class="btn btn-danger">Clear</button>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                </form>
             </div>
             <div class="col-xs-3 col-md-3"></div>
         </div>

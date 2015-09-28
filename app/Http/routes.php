@@ -29,6 +29,7 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+Route::post('chat/store', 'ChatController@store');
 
 Route::resource('blogs', 'BlogController');
 Route::resource('code', 'CodeController');
