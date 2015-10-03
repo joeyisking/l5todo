@@ -11,7 +11,7 @@
             <div class="col-xs-6 col-md-6">
                 <h3>Sunbros Live Chat</h3>
                 <div class="panel panel-default">
-                    <div class="panel-body" id="chat_window" style="height:300px">
+                    <div class="panel-body" id="chat_window" style="height:300px; overflow-y:scroll; max-height: 300px;">
                         <?php
                             foreach($chatmessages as $message){
 

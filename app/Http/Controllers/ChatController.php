@@ -48,6 +48,7 @@ class ChatController extends Controller
      */
     public function store()
     {
+        //Grab all the data we need to instead into the row
         $auth = new Auth();
         $user_id = $auth::user()->id;
         $input = Input::all();
@@ -56,8 +57,15 @@ class ChatController extends Controller
             "user_id" => $user_id,
             "message" => $input['message'],
         );
-        var_dump($param);
-        Chat::create($param);
+
+        //Create the row in the database
+        $result = Chat::create($param);
+        $result['name'] = $auth::user()->name;
+        if (is_object($result)){
+            return json_encode($result);
+        }
+
+        return false;
     }
 
     /**
