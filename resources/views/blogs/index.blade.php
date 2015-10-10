@@ -7,15 +7,16 @@
         <div class="panel-body">
             <?php
             foreach($blogs as $blog){
-
-                echo $blog->title . "<br />";
-            }
+            ?>
+                <a href="{{ route('posts.show', $blog->id) }}">  {{$blog->title}} </a><br />
+            <?php
+                }
             ?>
         </div>
 
     </div>
 
     <div>
-        <button />
+        <a class="btn btn-success" href="{{ route('posts.create') }}">New Blog</a>
     </div>
 @endsection

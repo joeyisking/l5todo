@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Input;
 use Redirect;
@@ -19,6 +20,12 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::all();
+        $auth = new Auth();
+
+        //Adds user's name to obj
+        foreach($posts as $key => $result){
+            $posts[$key]->name = $auth::user()->name;
+        }
         return view('posts.index', compact('posts'));
     }
 
@@ -90,5 +97,18 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function update_votes()
+    {
+        $input = Input::all();
+
+        $post = Post::find($input['id']);
+        $votes = $post->votes + $input['vote'];
+
+        $post->votes = $votes;
+        $post->save();
+
+        return json_encode($post);
     }
 }

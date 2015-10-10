@@ -30,6 +30,7 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 Route::post('chat/store', 'ChatController@store');
+Route::post('posts/update_votes', 'PostsController@update_votes');
 
 Route::resource('blogs', 'BlogController');
 Route::resource('code', 'CodeController');
