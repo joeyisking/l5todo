@@ -24,11 +24,10 @@ function voting(){
 
 function update_votes(id, vote){
     if (vote == 1){
-        $("#upvote_" + id).hide();
-        $("#downvote_" + id).show();
+        $("#upvote_" + id).css("color", "blue");
+        $("#upvote_" + id).css("pointer-events", "none");
     }else{
-        $("#upvote_" + id).show();
-        $("#downvote_" + id).hide();
+        $("#downvote_" + id).css("color", "red");
     }
 
     $.ajax({
